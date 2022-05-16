@@ -70,3 +70,20 @@ main {
     padding: 5px 25px;
     border: 2px solid black;
 }
+
+.weather-info__search-view button,
+.weather-info__btn-return {
+    transition: .5s;
+}
+
+.weather-info__search-view button:hover,
+.weather-info__btn-return:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: black;
+    color: white;
+}
+
+img#weatherIcon {
+    width: 30%;
+}
