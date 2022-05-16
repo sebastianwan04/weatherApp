@@ -10,28 +10,28 @@ const getDOMElem = id => {
 
 
 const connectHTMLElems = () => {
-    viewElems.mainContainer = getDOMElem('mainContainer')
-    viewElems.weatherSearchView = getDOMElem('weatherSearchView')
-    viewElems.weatherForecastView = getDOMElem('weatherForecastView')
+    viewElems.mainContainer = getDOMElem('mainContainer');
+    viewElems.weatherSearchView = getDOMElem('weatherSearchView');
+    viewElems.weatherForecastView = getDOMElem('weatherForecastView');
 
-    viewElems.searchInput = getDOMElem('searchInput')
-    viewElems.searchButton = getDOMElem('searchButton')
-    viewElems.weatherCityContainer = getDOMElem('weatherCityContainer')
+    viewElems.searchInput = getDOMElem('searchInput');
+    viewElems.searchButton = getDOMElem('searchButton');
+    viewElems.weatherCityContainer = getDOMElem('weatherCityContainer');
 
-    viewElems.weatherCity = getDOMElem('weatherCity')
-    viewElems.weatherIcon = getDOMElem('weatherIcon')
+    viewElems.weatherCity = getDOMElem('weatherCity');
+    viewElems.weatherIcon = getDOMElem('weatherIcon');
 
-    viewElems.weatherCurrentTemp = getDOMElem('weatherCurrentTemp')
-    viewElems.weatherMaxTemp = getDOMElem('weatherMaxTemp')
-    viewElems.weatherMinTemp = getDOMElem('weatherMinTemp')
+    viewElems.weatherCurrentTemp = getDOMElem('weatherCurrentTemp');
+    viewElems.weatherMaxTemp = getDOMElem('weatherMaxTemp');
+    viewElems.weatherMinTemp = getDOMElem('weatherMinTemp');
 
-    viewElems.returnToSearchBtn = getDOMElem('returnToSearchBtn')
+    viewElems.returnToSearchBtn = getDOMElem('returnToSearchBtn');
 }
 
 const setupListeners = () => {
-    viewElems.searchInput.addEventListener('keydown', onEnterSubmit)
-    viewElems.searchButton.addEventListener('click', onClickSubmit)
-    viewElems.returnToSearchBtn.addEventListener('click', returnToSearch)
+    viewElems.searchInput.addEventListener('keydown', onEnterSubmit);
+    viewElems.searchButton.addEventListener('click', onClickSubmit);
+    viewElems.returnToSearchBtn.addEventListener('click', returnToSearch);
 }
 
 const initializeApp = () => {
@@ -75,19 +75,19 @@ const displayWeatherData = (data) => {
 
 const fadeInOut = () => {
     if (viewElems.mainContainer.style.opacity === '1' || viewElems.mainContainer.style.opacity === '') {
-        viewElems.mainContainer.style.opacity = '0'
+        viewElems.mainContainer.style.opacity = '0';
     } else {
-        viewElems.mainContainer.style.opacity = '1'
+        viewElems.mainContainer.style.opacity = '1';
     }
 }
 
 const switchView = () => {
     if (viewElems.weatherSearchView.style.display !== 'none') {
-        viewElems.weatherSearchView.style.display = 'none'
-        viewElems.weatherForecastView.style.display = 'block'
+        viewElems.weatherSearchView.style.display = 'none';
+        viewElems.weatherForecastView.style.display = 'block';
     } else {
-        viewElems.weatherSearchView.style.display = 'flex'
-        viewElems.weatherForecastView.style.display = 'none'
+        viewElems.weatherSearchView.style.display = 'flex';
+        viewElems.weatherForecastView.style.display = 'none';
     }
 }
 
@@ -97,8 +97,8 @@ const returnToSearch = () => {
     setTimeout(() => {
         switchView();
         fadeInOut();
-    }, 500)
+    }, 500);
 }
 
 
-document.addEventListener('DOMContentLoaded', initializeApp)
+document.addEventListener('DOMContentLoaded', initializeApp);
