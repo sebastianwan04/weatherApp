@@ -28,10 +28,19 @@ class weatherApp {
         if (event.type === 'click' || event.key === 'Enter') {
             this.fadeInOut();
             let query = this.viewElems.searchInput.value;
+            this.viewElems.errorInfo.style.display = "none"
             getWeatherByCity(query)
                 .then(data => {
                     this.displayWeatherData(data);
-                });
+                    this.viewElems.searchInput.style.borderColor = 'black';
+
+                }).catch(() => {
+                    this.fadeInOut();
+                    this.viewElems.errorInfo.style.display = 'block'
+                    this.viewElems.searchInput.style.borderColor = 'red';
+                    this.viewElems.errorInfo.style.color = "red";
+                    this.viewElems.errorInfo.innerText = "Incorrect name of the city";
+                })
         }
     }
 
